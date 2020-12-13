@@ -2,19 +2,19 @@
 
 For level 1 first we go to the website and see the source code (Ctrl+u)
    
-   ```<!doctype html>
-   <html>
-   <head></head>
-   <body>
-   <h1>the journey begins...</h1>
-   <?php echo "asd"; ?>
-   <!--
-   `ssh level0@gracker.org`
-   password: level0
-   --!>
-   </body>
-   </html>
-	```
+```<!doctype html>
+<html>
+<head></head>
+<body>
+<h1>the journey begins...</h1>
+<?php echo "asd"; ?>
+<!--
+`ssh level0@gracker.org`
+password: level0
+--!>
+</body>
+</html>
+```
 
 The hostname is the same as the web and the username:password are:
    `level0:level0`
