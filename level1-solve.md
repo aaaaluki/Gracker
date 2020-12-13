@@ -72,6 +72,9 @@ Same as before, we go to the `/matrix/level1/` directory and disassemble the exe
 
 As it we can see in `<main+108>` the password is XORed with a key. if we go to the registers for this values:
 
+	0x00000000004008a9 <+108>:	movzbl 0x2005ad(%rip),%edx        # 0x600e5d <XORkey>
+
+
 	(gdb) x/s 0x600e40
 	0x600e40 <secret_password>:	"/q#q%8\036&4r22$2\036\065)(t\036\061 226q3%"
 	(gdb) x/s 0x600e5d
@@ -79,7 +82,7 @@ As it we can see in `<main+108>` the password is XORed with a key. if we go to t
 
 Now we just have to decode he encoded password with the given key:
 
-#!/usr/bin/env python3
+	#!/usr/bin/env python3
 
 	from itertools import cycle
 
