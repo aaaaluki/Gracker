@@ -1,14 +1,8 @@
-# Gracker
-My journey along [gracker.org](http://gracker.org/)
-
-Hostname: `gracker.org`
-
-
-## Level0
+# Level0
 
 For level 1 first we go to the website and see the source code (Ctrl+u)
    
-   <!doctype html>
+   ```<!doctype html>
    <html>
    <head></head>
    <body>
@@ -20,6 +14,7 @@ For level 1 first we go to the website and see the source code (Ctrl+u)
    --!>
    </body>
    </html>
+	```
 
 The hostname is the same as the web and the username:password are:
    `level0:level0`
@@ -78,7 +73,7 @@ Disassemble main as assembly code:
 	   0x0000000000400883 <+150>:	retq
 	End of assembler dump.
 
-At location main+98 the function strcmp is called, this function compares strings, so it's likely that this is used to check if the password is correct. So we set a breakpoint there, and we run it.
+At location <main+98> the function strcmp is called, this function compares strings, so it's likely that this is used to check if the password is correct. So we set a breakpoint there, and we run it.
 
 	(gdb) b *main+98
 	Breakpoint 1 at 0x40084f
@@ -98,7 +93,7 @@ At location main+98 the function strcmp is called, this function compares string
 
 Enter an easy password to recognize in hex A=0x41
 
-We read what is stored in register $esi
+We read what is stored in register $esi:
 
 	Breakpoint 1, 0x000000000040084f in main ()
 	(gdb) x/32wx $esi
@@ -115,6 +110,7 @@ There it's the secret password, to show it as a string run the following
 
 	(gdb) x/s $esi
 	0x600df0 <secret_password>:	"s3cr3t_backd00r_passw0rd"
+
 
 Usefull resources for this level:
 + [x command for gdb](https://visualgdb.com/gdbreference/commands/x)
