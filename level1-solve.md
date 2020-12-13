@@ -70,10 +70,11 @@ Same as before, we go to the `/matrix/level1/` directory and disassemble the exe
 	   0x000000000040091b <+222>:	retq
 	End of assembler dump.
 
-As it we can see in `<main+108>` the password is XORed with a key. if we go to the registers for this values:
+As it we can see in `<main+108>` the password is XORed with a key.
 
 	0x00000000004008a9 <+108>:	movzbl 0x2005ad(%rip),%edx        # 0x600e5d <XORkey>
 
+If we go to the registers for this values:
 
 	(gdb) x/s 0x600e40
 	0x600e40 <secret_password>:	"/q#q%8\036&4r22$2\036\065)(t\036\061 226q3%"
