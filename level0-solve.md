@@ -32,10 +32,10 @@ Disassemble main as assembly code:
 
 	(gdb) disas main
 	Dump of assembler code for function main:
-	   0x00000000004007ed <+0>:	push   %rbp
-	   0x00000000004007ee <+1>:	mov    %rsp,%rbp
-	   0x00000000004007f1 <+4>:	sub    $0x40,%rsp
-	   0x00000000004007f5 <+8>:	mov    %edi,-0x34(%rbp)
+	   0x00000000004007ed <+0>:		push   %rbp
+	   0x00000000004007ee <+1>:		mov    %rsp,%rbp
+	   0x00000000004007f1 <+4>:		sub    $0x40,%rsp
+	   0x00000000004007f5 <+8>:		mov    %edi,-0x34(%rbp)
 	   0x00000000004007f8 <+11>:	mov    %rsi,-0x40(%rbp)
 	   0x00000000004007fc <+15>:	mov    $0x400920,%edi
 	   0x0000000000400801 <+20>:	callq  0x4005e0 <puts@plt>
