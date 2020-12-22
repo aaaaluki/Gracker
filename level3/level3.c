@@ -21,7 +21,7 @@ int main(int argc, char **argv)
   printf("Zero Cool - Bugdoor v4\nEnter Password:\n");
   gets(buffer);
 
-  if(admin_enabled != 1) {
+  if(admin_enabled != 0) {
       printf("How can this happen? The variable is set to 0 and is never modified in between O.o\nYou must be a hacker!\n");
       spawn_shell();
   } else {
