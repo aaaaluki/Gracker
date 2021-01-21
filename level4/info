@@ -1,0 +1,49 @@
+(gdb) disas main
+Dump of assembler code for function main:
+   0x0000000000400676 <+0>:	push   %rbp
+   0x0000000000400677 <+1>:	mov    %rsp,%rbp
+   0x000000000040067a <+4>:	sub    $0x10
+   9,%rsp
+   0x000000000040067e <+8>:	callq  0x400570 <getegid@plt>
+   0x0000000000400683 <+13>:	mov    %eax,-0x4(%rbp)
+   0x0000000000400686 <+16>:	callq  0x400540 <geteuid@plt>
+   0x000000000040068b <+21>:	mov    %eax,-0x8(%rbp)
+   0x000000000040068e <+24>:	mov    -0x4(%rbp),%edx
+   0x0000000000400691 <+27>:	mov    -0x4(%rbp),%ecx
+   0x0000000000400694 <+30>:	mov    -0x4(%rbp),%eax
+   0x0000000000400697 <+33>:	mov    %ecx,%esi
+   0x0000000000400699 <+35>:	mov    %eax,%edi
+   0x000000000040069b <+37>:	mov    $0x0,%eax
+   0x00000000004006a0 <+42>:	callq  0x400520 <setresgid@plt>
+   0x00000000004006a5 <+47>:	mov    -0x8(%rbp),%edx
+   0x00000000004006a8 <+50>:	mov    -0x8(%rbp),%ecx
+   0x00000000004006ab <+53>:	mov    -0x8(%rbp),%eax
+   0x00000000004006ae <+56>:	mov    %ecx,%esi
+   0x00000000004006b0 <+58>:	mov    %eax,%edi
+   0x00000000004006b2 <+60>:	mov    $0x0,%eax
+   0x00000000004006b7 <+65>:	callq  0x400510 <setresuid@plt>
+   0x00000000004006bc <+70>:	mov    $0x400798,%edi
+   0x00000000004006c1 <+75>:	callq  0x400500 <puts@plt>
+   0x00000000004006c6 <+80>:	mov    $0x4007ca,%edi
+   0x00000000004006cb <+85>:	callq  0x400500 <puts@plt>
+   0x00000000004006d0 <+90>:	mov    $0x4007e7,%edi
+=> 0x00000000004006d5 <+95>:	callq  0x400530 <system@plt>
+   0x00000000004006da <+100>:	mov    $0x4007f0,%edi
+   0x00000000004006df <+105>:	callq  0x400500 <puts@plt>
+   0x00000000004006e4 <+110>:	mov    $0x40081a,%edi
+   0x00000000004006e9 <+115>:	callq  0x400530 <system@plt>
+   0x00000000004006ee <+120>:	mov    $0x400838,%edi
+   0x00000000004006f3 <+125>:	callq  0x400500 <puts@plt>
+   0x00000000004006f8 <+130>:	mov    $0x400860,%edi
+   0x00000000004006fd <+135>:	callq  0x400530 <system@plt>
+   0x0000000000400702 <+140>:	leaveq
+   0x0000000000400703 <+141>:	retq
+End of assembler dump.
+(gdb) x $edi
+0x4007e7:	"uname -a"
+(gdb) whatis $edi
+type = int32_t
+(gdb) info $edi
+Undefined info command: "$edi".  Try "help info".
+(gdb) info register $edi
+edi            0x4007e7	4196327
